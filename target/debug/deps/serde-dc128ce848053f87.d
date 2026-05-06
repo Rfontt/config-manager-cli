@@ -1,0 +1,12 @@
+/Users/ritadecassiafontenele/Documents/projects/config_manager/target/debug/deps/serde-dc128ce848053f87.d: /Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/ritadecassiafontenele/Documents/projects/config_manager/target/debug/build/serde-258665a108843663/out/private.rs
+
+/Users/ritadecassiafontenele/Documents/projects/config_manager/target/debug/deps/libserde-dc128ce848053f87.rmeta: /Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/ritadecassiafontenele/Documents/projects/config_manager/target/debug/build/serde-258665a108843663/out/private.rs
+
+/Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/Users/ritadecassiafontenele/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/Users/ritadecassiafontenele/Documents/projects/config_manager/target/debug/build/serde-258665a108843663/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/ritadecassiafontenele/Documents/projects/config_manager/target/debug/build/serde-258665a108843663/out

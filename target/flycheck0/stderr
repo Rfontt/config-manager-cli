@@ -1,0 +1,40 @@
+   0.051037834s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config_manager"}: cargo::core::compiler::fingerprint: stale: changed "/Users/ritadecassiafontenele/Documents/projects/config_manager/src/config/discovery.rs"
+   0.051047084s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config_manager"}: cargo::core::compiler::fingerprint:           (vs) "/Users/ritadecassiafontenele/Documents/projects/config_manager/target/debug/.fingerprint/config-manager-24b608a9820558bf/dep-lib-config_manager"
+   0.051049750s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config_manager"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1778021525, nanos: 718038830 } < FileTime { seconds: 1778110679, nanos: 753349011 }
+   0.051160250s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config_manager"}: cargo::core::compiler::fingerprint: fingerprint dirty for config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("config_manager", ["lib"], "/Users/ritadecassiafontenele/Documents/projects/config_manager/src/lib.rs", Edition2021) }
+   0.051168084s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config_manager"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/ritadecassiafontenele/Documents/projects/config_manager/target/debug/.fingerprint/config-manager-24b608a9820558bf/dep-lib-config_manager", reference_mtime: FileTime { seconds: 1778021525, nanos: 718038830 }, stale: "/Users/ritadecassiafontenele/Documents/projects/config_manager/src/config/discovery.rs", stale_mtime: FileTime { seconds: 1778110679, nanos: 753349011 } }))
+   0.059608459s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config_manager"}: cargo::core::compiler::fingerprint: stale: changed "/Users/ritadecassiafontenele/Documents/projects/config_manager/src/config/mod.rs"
+   0.059616709s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config_manager"}: cargo::core::compiler::fingerprint:           (vs) "/Users/ritadecassiafontenele/Documents/projects/config_manager/target/debug/.fingerprint/config-manager-eebd4317634c3cb2/dep-test-lib-config_manager"
+   0.059618500s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config_manager"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1778021525, nanos: 718080788 } < FileTime { seconds: 1778023990, nanos: 118394040 }
+   0.059674959s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config_manager"}: cargo::core::compiler::fingerprint: fingerprint dirty for config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("config_manager", ["lib"], "/Users/ritadecassiafontenele/Documents/projects/config_manager/src/lib.rs", Edition2021) }
+   0.059681500s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config_manager"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/ritadecassiafontenele/Documents/projects/config_manager/target/debug/.fingerprint/config-manager-eebd4317634c3cb2/dep-test-lib-config_manager", reference_mtime: FileTime { seconds: 1778021525, nanos: 718080788 }, stale: "/Users/ritadecassiafontenele/Documents/projects/config_manager/src/config/mod.rs", stale_mtime: FileTime { seconds: 1778023990, nanos: 118394040 } }))
+   0.060712625s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config-manager"}: cargo::core::compiler::fingerprint: fingerprint error for config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager)/Check { test: false }/TargetInner { name: "config-manager", doc: true, ..: with_path("/Users/ritadecassiafontenele/Documents/projects/config_manager/src/main.rs", Edition2021) }
+   0.060716584s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config-manager"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/ritadecassiafontenele/Documents/projects/config_manager/target/debug/.fingerprint/config-manager-0a6dc2e5fffce3f5/bin-config-manager`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.063173042s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config-manager"}: cargo::core::compiler::fingerprint: fingerprint dirty for config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager)/Check { test: true }/TargetInner { name: "config-manager", doc: true, ..: with_path("/Users/ritadecassiafontenele/Documents/projects/config_manager/src/main.rs", Edition2021) }
+   0.063177584s  INFO prepare_target{force=false package_id=config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager) target="config-manager"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { unit: UnitIndex(27) })
+    Checking config-manager v0.1.0 (/Users/ritadecassiafontenele/Documents/projects/config_manager)
+error: could not compile `config-manager` (lib test) due to 2 previous errors; 1 warning emitted
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `config-manager` (lib) due to 2 previous errors; 1 warning emitted
