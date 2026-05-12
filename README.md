@@ -65,62 +65,52 @@ config-manager list --tool git   # Specific tool
 config-manager list --detailed   # With timestamps
 ```
 
+## Result
+
+![list-command-result](./docs/list_command.png)
+
 ## Project Architecture
 
 ```
 config-manager/
 ├── src/
-│   ├── main.rs              # CLI entry point & handlers
-│   ├── lib.rs               # Library exports
-│   ├── error.rs             # Error handling
-│   ├── cli.rs               # Command parser
-│   ├── config/              # Config discovery
-│   │   ├── mod.rs           # Core types
-│   │   └── discovery.rs     # Discovery engine
-│   ├── editor/              # File operations
-│   │   ├── file_ops.rs      # Read/write/backup
-│   │   ├── diff.rs          # Diff generation
-│   │   └── validation.rs    # Syntax validation
-│   ├── storage/             # Configuration
-│   │   └── mod.rs           # AppConfig
-├── tests/
-│   └── integration_test.rs  # E2E tests
-├── completions/             # Shell completions
-│   ├── config-manager.bash  # Bash
-│   └── config-manager.zsh   # Zsh
-└── Cargo.toml               # Manifest
-```
-
-## Testing
-
-Run all tests:
-```bash
-cargo test --all
-```
-
-Run specific test:
-```bash
-cargo test editor::file_ops
-```
-
-With output:
-```bash
-cargo test -- --nocapture
-```
-
-Integration tests:
-```bash
-cargo test --test integration_test
+│   ├── main.rs                      # CLI entry point
+│   ├── lib.rs                       # Library exports
+│   ├── error.rs                     # Error handling
+│   ├── cli.rs                       # Command parser
+│   ├── config/                      # Config management
+│   │   ├── mod.rs                   # Core types
+│   │   ├── config_discovery.rs      # Discovery engine
+│   │   ├── config_file.rs           # File abstraction
+│   │   ├── config_format.rs         # Format detection
+│   │   └── tools/                   # Tool registry
+│   │       ├── mod.rs
+│   │       ├── tool_registry.rs     # Registry data structure
+│   │       └── tools_data.rs        # Tool definitions
+│   ├── editor/                      # Editor operations
+│   │   ├── mod.rs
+│   │   ├── file_config.rs           # Configuration wrapper
+│   │   └── file_repository.rs       # File operations
+│   ├── handler/                     # Command handlers
+│   │   ├── mod.rs
+│   │   ├── list_handler.rs          # List command logic
+│   │   └── edit_handler.rs          # Edit command logic
+└── Cargo.toml                       # Manifest
 ```
 
 ## Development
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for:
-- Development setup
-- Code style guidelines
-- Testing requirements
-- Pull request process
-- Release process
+Build the project:
+```bash
+cargo build
+cargo build --release
+```
+
+Run with arguments:
+```bash
+cargo run -- list
+cargo run -- edit zsh --code
+```
 
 ## Security
 
