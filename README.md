@@ -1,6 +1,6 @@
 # Config Manager 🔧
 
-A powerful macOS CLI tool written in Rust for discovering and managing configuration files.
+Config Manager is a Rust CLI tool for discovering and managing configuration files across macOS, Linux, and Windows systems
 
 ## Features
 
