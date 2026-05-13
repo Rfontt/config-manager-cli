@@ -1,7 +1,13 @@
-use crate::config::config_discovery::ConfigDiscovery;
+use crate::config::discovery::files_discovery::ConfigDiscovery;
+use crate::config::ProjectDiscovery;
+use crate::config::models::FilesystemEntity;
 use crate::error::Result;
+use crate::editor::file_config::FileConfig;
 
-pub fn handle_list(tool: Option<String>, detailed: bool) -> Result<()> {
+pub fn handle_list(tool: Option<String>, detailed: bool, projects: bool) -> Result<()> {
+    if projects {
+        return handle_list_projects(detailed);
+    }
     let discovery = ConfigDiscovery::new();
 
     let configs = if let Some(tool_name) = tool {
@@ -66,6 +72,63 @@ pub fn handle_list(tool: Option<String>, detailed: bool) -> Result<()> {
                  size
              );
          }
+    }
+
+    Ok(())
+}
+
+fn handle_list_projects(detailed: bool) -> Result<()> {
+    let discovery = ProjectDiscovery::new()?;
+    let settings = FileConfig::projects_settings()?;
+    let projects_path = settings.get_path();
+
+    let projects = discovery.discover_all()?;
+
+    if projects.is_empty() {
+        println!("No projects discovered in: {}", projects_path);
+        return Ok(());
+    }
+
+    println!("\nProjects discovered at: {}\n", projects_path);
+
+    if detailed {
+        println!(
+            "{:<30} {:<50} {:<20}",
+            "Project", "Path", "Markers"
+        );
+
+        println!("{}", "-".repeat(100));
+
+        for project in projects {
+            let modified = project
+                .last_modified
+                .map(|t| t.format("%Y-%m-%d %H:%M").to_string())
+                .unwrap_or_else(|| "Unknown".to_string());
+
+            println!(
+                "{:<30} {:<50} {:<20}",
+                project.name,
+                project.display_path(),
+                project.markers.join(", ")
+            );
+            println!("  Modified: {}", modified);
+            println!();
+        }
+    } else {
+        println!(
+            "{:<30} {:<50} {:<20}",
+            "Project", "Path", "Markers"
+        );
+        println!("{}", "-".repeat(100));
+
+        for project in projects {
+            println!(
+                "{:<30} {:<50} {:<20}",
+                project.name,
+                project.display_path(),
+                project.markers.join(", ")
+            );
+        }
     }
 
     Ok(())
