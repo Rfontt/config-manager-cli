@@ -14,7 +14,7 @@ fn main() -> Result<()> {
     }
 
     match cli.command {
-        Some(Command::List { tool, detailed }) => handle_list(tool, detailed)?,
+        Some(Command::List { tool, detailed, projects }) => handle_list(tool, detailed, projects)?,
         Some(Command::Edit {
             config,
             code,

@@ -23,7 +23,10 @@ pub enum Command {
         tool: Option<String>,
 
         #[arg(short, long)]
-        detailed: bool
+        detailed: bool,
+
+        #[arg(long)]
+        projects: bool
     },
 
     Edit {

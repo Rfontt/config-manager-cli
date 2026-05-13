@@ -1,4 +1,5 @@
-use crate::config::config_discovery::ConfigDiscovery;
+use crate::config::discovery::files_discovery::ConfigDiscovery;
+use crate::config::models::FilesystemEntity;
 use crate::error::Result;
 
 pub fn handle_edit(

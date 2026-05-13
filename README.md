@@ -80,9 +80,18 @@ config-manager/
 │   ├── cli.rs                       # Command parser
 │   ├── config/                      # Config management
 │   │   ├── mod.rs                   # Core types
-│   │   ├── config_discovery.rs      # Discovery engine
-│   │   ├── config_file.rs           # File abstraction
 │   │   ├── config_format.rs         # Format detection
+│   │   ├── discovery/               # Discovery engine
+│   │   │   ├── mod.rs
+│   │   │   ├── common.rs            # Shared discovery utilities
+│   │   │   ├── files_discovery.rs   # File-based discovery
+│   │   │   └── project_discovery.rs # Project discovery
+│   │   ├── models/                  # Data models
+│   │   │   ├── mod.rs
+│   │   │   ├── config_file.rs       # Config file abstraction
+│   │   │   ├── file_metadata.rs     # File metadata
+│   │   │   ├── filesystem_entity.rs # Filesystem entity
+│   │   │   └── project_file.rs      # Project file model
 │   │   └── tools/                   # Tool registry
 │   │       ├── mod.rs
 │   │       ├── tool_registry.rs     # Registry data structure
